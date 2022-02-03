@@ -1,11 +1,11 @@
 package principal;
 
-public class Ej10 implements Comparable<Ej10> {
+public class Gato implements Comparable<Gato> {
     private String nombre, color, raza;
     private int edad;
 
-    //Constructor por defecto en el que no se especifican el color o la raza
-    public Ej10(){
+    //Constructor por defecto que añadira valores por defecto a la raza y el color ya que no son relevantes
+    public Gato(){
         this.color="negro";
         this.raza="común";
     }
@@ -28,9 +28,7 @@ public class Ej10 implements Comparable<Ej10> {
     }
 
     //Metodos CompareTo
-
-
-    public int compareTo(Ej10 gato2) {
+    public int compareTo(Gato gato2) {
         int resultado=-1;
         if(this.edad==gato2.getEdad()){
             //Los objetos son iguales
@@ -42,7 +40,8 @@ public class Ej10 implements Comparable<Ej10> {
         return resultado;
     }
 
-    public int compareToNombre(Ej10 gato2){
+    //Metodo compareTo para los nombres
+    public int compareToNombre(Gato gato2){
         int comparacion= this.nombre.compareTo(gato2.getNombre());
         return comparacion;
     }

@@ -1,13 +1,13 @@
 package principal;
 
-public class Ej5 {
+public class SintonizadorFM {
 
     private final double SALTOS = 0.5;
     private final double FRECUENCIAMAX = 108;
     private final double FRECUENCIAMIN = 80;
     private double sintonizador;
 
-    public Ej5() {
+    public SintonizadorFM() {
         sintonizador = 80;
     }
 

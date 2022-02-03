@@ -6,8 +6,8 @@ public class MainEj10 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int comparacionEdad, comparacionNombre;
-        Ej10 gato1 = new Ej10();
-        Ej10 gato2 = new Ej10();
+        Gato gato1 = new Gato();
+        Gato gato2 = new Gato();
 
         //Obtencion de los nombres de los gatos
         System.out.println("Inserte el nombre del primer gato");
@@ -35,24 +35,20 @@ public class MainEj10 {
             default:
                 System.out.println("Ambos tienen la misma edad");
         }
+
+        //Uso del metodo compareTo para comparar nombres
         comparacionNombre=gato1.compareToNombre(gato2);
-        switch (comparacionNombre){
-            case 1:
-                System.out.println("El nombre del primer gato va primero");
-                break;
 
-            case -1:
+        /*If y else if para utilizar expresiones compuestas que no
+         se pueden utilizar en un switch debido a que el metodo compareTo en String no devuelve siempre -1, 0 o 1*/
+        if (comparacionNombre<0){
+            System.out.println("El nombre del primer gato va primero");
+        } else
+            if (comparacionNombre>0){
                 System.out.println("El nombre del segundo gato va primero");
-                break;
-
-            default:
+            } else{
                 System.out.println("Tienen el mismo nombre");
-        }
-
-        
-        
-
-
+            }
 
     }
 }

@@ -3,7 +3,7 @@ package principal;
 public class MainEj5 {
 
     public static void main(String[] args) {
-        Ej5 radio1 = new Ej5();
+        SintonizadorFM radio1 = new SintonizadorFM();
         //Variable para alternar entre metodos
         int opcion=1;
 
