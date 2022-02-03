@@ -6,8 +6,8 @@ public class MainEj10 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int comparacionEdad, comparacionNombre;
-        Gato gato1 = new Gato();
-        Gato gato2 = new Gato();
+        Ej10 gato1 = new Ej10();
+        Ej10 gato2 = new Ej10();
 
         //Obtencion de los nombres de los gatos
         System.out.println("Inserte el nombre del primer gato");

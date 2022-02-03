@@ -1,13 +1,11 @@
 package principal;
 
-import java.util.Locale;
-
-public class Gato implements Comparable<Gato> {
+public class Ej10 implements Comparable<Ej10> {
     private String nombre, color, raza;
     private int edad;
 
     //Constructor por defecto en el que no se especifican el color o la raza
-    public Gato(){
+    public Ej10(){
         this.color="negro";
         this.raza="común";
     }
@@ -32,7 +30,7 @@ public class Gato implements Comparable<Gato> {
     //Metodos CompareTo
 
 
-    public int compareTo(Gato gato2) {
+    public int compareTo(Ej10 gato2) {
         int resultado=-1;
         if(this.edad==gato2.getEdad()){
             //Los objetos son iguales
@@ -44,7 +42,7 @@ public class Gato implements Comparable<Gato> {
         return resultado;
     }
 
-    public int compareToNombre(Gato gato2){
+    public int compareToNombre(Ej10 gato2){
         int comparacion= this.nombre.compareTo(gato2.getNombre());
         return comparacion;
     }
