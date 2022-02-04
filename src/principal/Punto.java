@@ -27,13 +27,11 @@ public class Punto {
     //Metodos
     //Distancia entre punto1 y el origen
     public double distancia(){
-        double resultado=Math.sqrt(Math.pow(this.a, 2) + Math.pow(this.b, 2));
-        return resultado;
+        return Math.sqrt(Math.pow(this.a, 2) + Math.pow(this.b, 2));
     }
     //Distancia entre punto1 y otro punto introducido
     public double distancia(int coordX, int coordY){
-        double resultado=Math.sqrt(Math.pow(coordX-this.a, 2) + Math.pow(coordY-this.b, 2));
-        return resultado;
+        return Math.sqrt(Math.pow(coordX-this.a, 2) + Math.pow(coordY-this.b, 2));
     }
 
 

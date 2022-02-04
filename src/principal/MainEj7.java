@@ -3,53 +3,74 @@ import java.util.Scanner;
 public class MainEj7 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        Fraccion fraccion1= new Fraccion();
-        Fraccion fraccion2= new Fraccion();
-        int denominador, opcion;
+        //Creamos las variables necesarias
+        int numerador,denominador, opcion;
 
-        System.out.println("Introduzca el numerador");
-        fraccion1.setNumerador(sc.nextInt());
-        System.out.println("Introduzca el denominador");
+        //Creamos la primera fraccion
+        System.out.println("Introduzca el numerador de la primera fraccion");
+        numerador=sc.nextInt();
+        System.out.println("Introduzca el denominador de la primera fraccion");
         denominador= sc.nextInt();
-        while (denominador<0){
+        while (denominador<=0){
             System.out.println("Denominador incorrecto, debe ser mayor que 0");
             denominador= sc.nextInt();
         }
-        fraccion1.setDenominador(denominador);
+        Fraccion fraccion1= new Fraccion(numerador,denominador);
 
 
+        //Creamos la segunda fraccion
+        System.out.println("Introduzca el numerador de la segunda fraccion");
+        numerador= sc.nextInt();
+        System.out.println("Introduzca el denominador de la segunda fraccion");
+        denominador= sc.nextInt();
+        while (denominador<=0){
+            System.out.println("Denominador incorrecto, debe ser mayor que 0");
+            denominador= sc.nextInt();
+        }
+        Fraccion fraccion2=new Fraccion(numerador, denominador);
+
+
+        //Diseñamos un menu para elegir entre las opciones que proporciona el ejercicio
         System.out.println("Que desea hacer con la fracción? (Introduzca el numero de la opcion)");
         System.out.println("1: Multiplicarla por otra");
         System.out.println("2: Dividirla por otra");
         System.out.println("3: Invertir el signo");
         System.out.println("4: Simplificarla");
         opcion= sc.nextInt();
-
-        if(opcion==1 || opcion==2){
-            System.out.println("Introduzca el numerador de la segunda fraccion");
-            fraccion2.setNumerador(sc.nextInt());
-            System.out.println("Introduzca el denominador de la segunda fraccion");
-            denominador= sc.nextInt();
-            while (denominador<0){
-                System.out.println("Denominador incorrecto, debe ser mayor que 0");
-                denominador= sc.nextInt();
-            }
-            fraccion2.setDenominador(denominador);
-        }
         switch (opcion){
             case 1:
-                fraccion1.multiplicacion(fraccion2);
-                System.out.println("La fracción resultante es: "+fraccion2.getNumerador()+"/"+fraccion2.getDenominador());
+                Fraccion resultadoMultiplicacion=Fraccion.multiplicacion(fraccion1,fraccion2);
+                System.out.println("La fracción resultante es: "+Fraccion.simplificar(resultadoMultiplicacion));
                 break;
             case 2:
-                fraccion1.division(fraccion2);
-                System.out.println("La fracción resultante es: "+fraccion2.getNumerador()+"/"+fraccion2.getDenominador());
+                Fraccion resultadoDivision=Fraccion.division(fraccion1,fraccion2);
+                System.out.println("La fracción resultante es: "+Fraccion.simplificar(resultadoDivision));
                 break;
             case 3:
-                fraccion1.setNumerador(fraccion1.getNumerador()*-1);
-                System.out.println("La fracción resultante es: "+fraccion1.getNumerador()+"/"+fraccion1.getDenominador());
+                System.out.println("Desea invertir la fraccion 1 o la 2? (Escriba el numero)");
+                opcion= sc.nextInt();
+                switch (opcion) {
+                    case 1:
+                        System.out.println("La fracción resultante es: " + Fraccion.inversionSigno(fraccion1));
+                        break;
+
+                    case 2:
+                        System.out.println("La fracción resultante es: " + Fraccion.inversionSigno(fraccion2));
+                        break;
+                }
                 break;
             case 4:
+                System.out.println("Desea simplificar la fraccion 1 o la 2? (Escriba el numero)");
+                opcion= sc.nextInt();
+                switch (opcion) {
+                    case 1:
+                        System.out.println("La fracción resultante es: " + Fraccion.simplificar(fraccion1));
+                        break;
+
+                    case 2:
+                        System.out.println("La fracción resultante es: " + Fraccion.simplificar(fraccion2));
+                        break;
+                }
                 break;
             default:
                 System.out.println("Numero de opcion incorrecta");
