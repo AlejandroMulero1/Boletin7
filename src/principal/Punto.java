@@ -7,18 +7,14 @@ public class Punto {
     Punto(){
     }
 
-    //Getters y Setters
-    public double getX() {
-        return a;
-    }
+    //Setters
+
 
     public void setX(int a) {
         this.a = a;
     }
 
-    public double getY() {
-        return b;
-    }
+
 
     public void setY(int b) {
         this.b = b;
